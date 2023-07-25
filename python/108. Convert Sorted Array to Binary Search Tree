@@ -1,0 +1,23 @@
+# Definition for a binary tree node.
+# class TreeNode(object):
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution(object):
+    def sortedArrayToBST(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: TreeNode
+        """
+        def sorttree(nums):
+            if len(nums) == 0:
+                return None
+            in_m = len(nums)//2
+            root = TreeNode(nums[in_m])
+            root.left = sorttree(nums[:in_m])
+            root.right = sorttree(nums[in_m+1:])
+            return root
+        
+        return sorttree(nums)
+            
