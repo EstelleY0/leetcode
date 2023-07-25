@@ -1,0 +1,16 @@
+class Solution(object):
+    def strStr(self, haystack, needle):
+        """
+        :type haystack: str
+        :type needle: str
+        :rtype: int
+        """
+        if needle == haystack:
+            return 0
+        
+        spl_n = haystack.split(needle)
+        
+        if spl_n[0] != haystack:
+            return len(spl_n[0])
+        else:
+            return -1
