@@ -1,0 +1,8 @@
+class Solution(object):
+    def plusOne(self, digits):
+        """
+        :type digits: List[int]
+        :rtype: List[int]
+        """
+        digit = "".join(map(str, digits))
+        return list(str(int(digit)+1))       
